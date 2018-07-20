@@ -55,7 +55,7 @@ var removeNotes = (title) => {
   */
   var notes = readNotesFromFile('notesData.json');
   var newNotes = notes.filter((note) => note.title !== title);
-  console.log(newNotes);
+  console.log(newNotes.length);
   notes = newNotes;
   writeNotestoFile('notesData.json', notes);
 

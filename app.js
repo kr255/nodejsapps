@@ -14,6 +14,15 @@ var commandEnum = {
   LIST    : "list"
 };
 var Enum = Object.freeze(commandEnum);
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+
+  for (var i = 0; i < 8; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
 
 if(command === Enum.CREATE)
 {
@@ -38,5 +47,9 @@ else if(command === Enum.UPDATE)
   //console.log("Not Currently supported");
 }
 else {
+  for(i = 0; i <100; i++)
+  {
+    notes.addNotes((Math.random()*100)+i, makeid());
+  }
   console.log("Not a valid command");
 }
